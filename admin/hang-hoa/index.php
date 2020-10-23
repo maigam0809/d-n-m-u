@@ -4,7 +4,7 @@ require "../../dao/hang-hoa.php";
 //--------------------------------//
 require "../../dao/loai.php";
 
-// check_login();
+check_login();
 
 extract($_REQUEST);
 $err = [

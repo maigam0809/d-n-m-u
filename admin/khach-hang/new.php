@@ -89,7 +89,7 @@
                                         <div class="form-group">
                                             <label for="">Date of birth</label>
                                             <div>
-                                                <input class="p-3 mr-1" name="date_of_birth" value="<?=$date_of_birth?>" type="date">
+                                                <input class="p-3 mr-1" name="date_of_birth" value="<?php echo $_POST['date_of_birth'] ?? ''; ?>" type="date">
                                                 <p style="color: red;"><?php echo $err['date_of_birth'] ?? ''; ?></p>
                                             </div>
                                         </div>

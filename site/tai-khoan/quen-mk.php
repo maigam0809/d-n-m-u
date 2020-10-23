@@ -7,7 +7,7 @@ extract($_REQUEST);
 $VIEW_NAME="tai-khoan/quen-mk-form.php";
 
 if(exist_param("btn_forgot")){
-    $user = khach_hang_select_by_id($id);
+    $user = khach_hang_by_username($username);
     if($user){
         if($user['email'] != $email){
             $MESSAGE = "Sai địa chỉ email!";
@@ -15,7 +15,7 @@ if(exist_param("btn_forgot")){
         else{
             $MESSAGE = "Mật khẩu của bạn là: " . $user['password'];
             $VIEW_NAME="tai-khoan/dang-nhap-form.php";
-            global $id, $password;
+            global $username, $password;
         }
     }
     else{

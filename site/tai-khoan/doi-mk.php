@@ -11,11 +11,11 @@ if(exist_param("btn_change")){
         $MESSAGE = "Xác nhận mật khẩu mới không đúng!";
     }
     else{
-        $user = khach_hang_select_by_id($id);
+        $user = khach_hang_by_username($username);
         if($user){
             if($user['password'] == $password){
                 try {
-                    khach_hang_change_password($id, $mat_khau2);
+                    khach_hang_change_password($username, $mat_khau2);
                     $MESSAGE = "Đổi mật khẩu thành công!";
                 } 
                 catch (Exception $exc) {

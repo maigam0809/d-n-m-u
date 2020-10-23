@@ -3,7 +3,7 @@ require "../../global.php";
 require "../../dao/loai.php";
 //--------------------------------//
 
-// check_login();
+check_login();
 
 // Lấy toàn bộ dữ liệu trong bảng categories
 extract($_REQUEST);

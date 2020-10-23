@@ -3,7 +3,7 @@ require "../../global.php";
 require "../../dao/khach-hang.php";
 //--------------------------------//
 
-// check_login();
+check_login();
 
 extract($_REQUEST);
 
@@ -33,7 +33,7 @@ if (exist_param("btn_insert")) {
 
         // Kiểm tra xem các giá trị mà ta nhập vào có  hay không nhé
 
-        var_dump($username);
+        // var_dump($username);
         $sql = "SELECT id,username FROM users where username like '$username'";
         $item_username = pdo_query($sql);
         if(count($item_username) > 0){
@@ -54,7 +54,7 @@ if (exist_param("btn_insert")) {
             $err['fullname'] ="Tên là tiếng việt không dấu , không chứa số và không chứa kí tự đặc biệt";
         }
 
-        var_dump($email);
+        // var_dump($email);
         $sql = "SELECT id,email FROM users where email like '$email'";
         $item_list = pdo_query($sql);
         if(count($item_list) > 0){
@@ -63,7 +63,7 @@ if (exist_param("btn_insert")) {
 
     
 
-        var_dump($phone);
+        // var_dump($phone);
         $sql = "SELECT id,phone FROM users where phone like '$phone'";
         $item_phone = pdo_query($sql);
         if(count($item_phone) > 0){
@@ -145,7 +145,8 @@ if (exist_param("btn_insert")) {
                 'gender' => $gender,
                 'phone' => $phone,
                 'activated' => $activated,
-                'image' => $image
+                'image' => $image,
+                'date_of_birth' => $date_of_birth,
                 
             ];
             
@@ -252,6 +253,9 @@ if (exist_param("btn_insert")) {
             $err['date_of_birth'] = "Bạn không được để trống ngày sinh nhật";
         }
 
+
+        // dd($err);
+        // thấy lỗi chưa thấy rồi
        
         // var_dump($_REQUEST);
         // die;
@@ -274,6 +278,10 @@ if (exist_param("btn_insert")) {
             if (isset($image)) {
                 $data['image'] = $image;
             }
+
+
+            // dd($data);
+
             
             khach_hang_update2($data);
             $MESSAGE = "Cật nhật thành công!";
@@ -310,7 +318,7 @@ if (exist_param("btn_insert")) {
         }
         if(in_array($_REQUEST['id'], $b)){
             khach_hang_delete($id);
-            $item = khach_hang_select_page();
+            $items = khach_hang_select_page();
             $MESSAGE = "Xóa thành công!";
             $VIEW_NAME = "khach-hang/list.php";
     

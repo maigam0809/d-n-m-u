@@ -7,8 +7,6 @@
         
     }
 ?>
-
-
     <form action="cap-nhat-tk.php" method="post" class="mt-3" enctype="multipart/form-data">
         <div class="mt-3">
             <div class="col-4">
@@ -16,7 +14,6 @@
             </div>
             <div class="col-8">
                 <div class="form-group">
-                    <!-- <label>Tên đăng nhập</label> -->
                     <input name="id" class="form-control" value="<?=$id?>" type="hidden">
                 </div>
                 <div class="form-group">
@@ -35,17 +32,18 @@
                     <label>Hình</label>
                     <input name="up_hinh" class="form-control" type="file">
                 </div>
-                <div>
-                    <button class="btn btn-primary" name="btn_update">Cập nhật</button>
-                </div>
-                <!--Giá trị mặc định-->
-                <input name="role" value="<?=$role?>" type="hidden">
+                <input name="address" value="<?=$address?>" type="hidden">
+                <input name="gender" value="<?=$gender?>" type="hidden">
+                <input name="phone" value="<?=$phone?>" type="hidden">
+                <input name="date_of_birth" value="<?=$date_of_birth?>" type="hidden">
+                <!-- <input name="role" value="<?=$role?>" type="hidden"> -->
                 <input name="activated" value="<?=$activated?>" type="hidden">
                 <input name="password" value="<?=$password?>" type="hidden">
                 <input name="image" value="<?=$image?>" type="hidden">
-                <input name="date_of_birth" value="<?=$image?>" type="hidden">
+                <div>
+                    <button class="btn btn-primary" name="btn_update">Cập nhật</button>
+                </div>
             </div>
         </div>
     </form>
-
 </div>

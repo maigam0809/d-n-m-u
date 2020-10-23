@@ -8,7 +8,7 @@ echo "<h5>$MESSAGE</h5>";
     <form action="quen-mk.php" method="post">
         <div class="form-group">
             <label for="">Tên đăng nhập</label>
-            <input name="id" class="form-control" id="" placeholder="Tên đăng nhập">
+            <input name="username" class="form-control" id="" placeholder="Tên đăng nhập">
         </div>
         <div class="form-group">
             <label for="">Địa chỉ email</label>

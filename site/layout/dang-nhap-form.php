@@ -5,7 +5,7 @@
         <form action="<?=$SITE_URL?>/tai-khoan/dang-nhap.php" method="post">
             <div>
                 <div class="label">Tên đăng nhập</div>
-                <input name="id"  class="input"  value="<?=$id?>">
+                <input type="text" name="username" class="input" value="<?=$username?>">
 
             </div>
             <div>

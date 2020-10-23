@@ -79,6 +79,11 @@ function khach_hang_select_by_id($id)
 
 }
 
+function khach_hang_by_username($username){
+    $sql = "SELECT * FROM users WHERE username=?";
+    return pdo_query_one($sql, $username);
+}
+
 
 function khach_hang_exist($id)
 {
@@ -94,10 +99,10 @@ function khach_hang_select_by_role($role)
 
 }
 
-function khach_hang_change_password($id, $pass_new)
+function khach_hang_change_password($username, $mat_khau2)
 {
-    $sql = "UPDATE users SET password=? WHERE id=?";
-    pdo_execute($sql, $pass_new, $id);
+    $sql = "UPDATE users SET password=? WHERE username=?";
+    pdo_execute($sql, $mat_khau2, $username);
 
 }
 
